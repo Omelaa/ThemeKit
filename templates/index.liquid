@@ -1,0 +1,15 @@
+<h2>{{ collections.frontpage.title }}</h2>
+
+<ul>
+  {% for product in collections.frontpage.products %}
+    <li>
+      <h3>
+        {{- product.title | link_to: product.url }}
+      </h3>
+      <img src="{{product.featured_image | image_url}}" alt="{{product.title}}" />
+      <span>
+      {{product.price}}
+      </span>  
+    </li>
+  {% endfor %}
+</ul>
