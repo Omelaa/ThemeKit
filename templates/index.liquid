@@ -2,16 +2,6 @@
 
 <ul>
   {% for product in collections.frontpage.products %}
-    <li>
-      <a href="{{product.url}}">
-        <h3>
-          {{- product.title | link_to: product.url }}
-        </h3>
-        <img src="{{product.featured_image | image_url: width: 400}}" alt="{{product.title}}">
-        <span>
-          {{ product.price | money }}
-        </span>
-      </a>
-    </li>
+    {% render 'product-item', product: product %}
   {% endfor %}
 </ul>
